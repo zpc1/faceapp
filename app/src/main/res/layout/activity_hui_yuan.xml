@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/tv_titile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="@color/colorHead"
+        android:text="        ID            姓 名                年 龄         性 别        "
+        />
+
+    <ListView
+        android:layout_below="@+id/tv_titile"
+        android:layout_above="@+id/btn_search"
+        android:id="@+id/huiyuan_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/showLiner"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/bn_delete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除"
+            android:enabled="false"
+            />
+        <Button
+            android:id="@+id/bn_selectall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全选"
+            />
+        <Button
+            android:id="@+id/bn_canel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消"
+            />
+    </LinearLayout>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_search"
+        android:text="查找"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
