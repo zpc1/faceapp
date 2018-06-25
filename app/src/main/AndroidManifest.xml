@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.deeocare.deepcare">
+    package="com.deeocare.deepcare">
 
     <application
         android:allowBackup="true"
@@ -9,21 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KeHuListActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".AddKeHuActivity">
-        </activity>
-        <activity android:name=".ShowKeHuActivity">
-        </activity>
-        <activity android:name=".KeHuSearchActivity">
-        </activity>
+        <activity android:name=".AddKeHuActivity" />
+        <activity android:name=".ShowKeHuActivity" />
+        <activity android:name=".KeHuSearchActivity" />
+        <activity android:name=".RecyclerActivity" />
+        <activity android:name=".ui.HuiYuanActivity" />
+        <activity android:name=".ui.AddHuiYuanActivity" />
+        <activity android:name=".ui.ShowHuiYuanActivity" />
+        <activity android:name=".ui.HuiYuanSearchActivity"></activity>
     </application>
 
 </manifest>

@@ -234,20 +234,6 @@ public class KeHuListActivity extends ListActivity implements View.OnClickListen
 
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-//        Log.e(TAG, "list size=" + listView.getCount());
-//        listView.getChildAt(listView.getCount()-1).findViewById(R.id.cb_box).setVisibility(View.GONE);
-        int childCount = listView.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View view = listView.getChildAt(i);
-            if (view != null) {
-                CheckBox box = (CheckBox) view.findViewById(R.id.cb_box);
-                Log.d(TAG, "is show" + box.getVisibility());
-            }
-        }
-    }
 
     // 全选或者取消全选
     private void checkOrClearAllCheckboxs(boolean b) {

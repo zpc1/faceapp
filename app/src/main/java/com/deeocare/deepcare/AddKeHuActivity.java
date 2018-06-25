@@ -129,7 +129,7 @@ public class AddKeHuActivity extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(this, "保存失败，请重新输入！", Toast.LENGTH_SHORT).show();
                 }
             } else if (!isAdd) {
-                long id = dao.addStudent(student);
+                long id = dao.updateStudent(student);
                 dao.closeDB();
                 if (id > 0) {
                     Toast.makeText(this, "更新成功",Toast.LENGTH_SHORT).show();
