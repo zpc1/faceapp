@@ -13,4 +13,5 @@
     <string name="btn_add_huiyuan">新建档案</string>
     <string name="btn_fangan">解决方案</string>
     <string name="btn_my">个人中心</string>
+    <string name="title_activity_custom_camera">CustomCamera</string>
 </resources>

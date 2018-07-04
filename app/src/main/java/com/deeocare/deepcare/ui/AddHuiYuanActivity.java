@@ -95,6 +95,7 @@ public class AddHuiYuanActivity extends AppCompatActivity implements View.OnClic
                 dao.closeDB();
                 if (id > 0) {
                     Toast.makeText(this, "保存成功， ID=" + id,Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this, HuiYuanActivity.class));
                     finish();
                 } else {
                     Toast.makeText(this, "保存失败，请重新输入！", Toast.LENGTH_SHORT).show();

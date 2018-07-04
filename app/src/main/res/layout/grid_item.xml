@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.deeocare.deepcare.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_titile"
+        android:padding="20dp"
+        android:text="肤质"
+        android:textColor="@color/colorfuzhi"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.github.mikephil.charting.charts.RadarChart
+        android:id="@+id/radarchart_fuzhi"
+        android:layout_below="@+id/tv_fuzhi"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </com.github.mikephil.charting.charts.RadarChart>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_below="@+id/radarchart_fuzhi"
+                android:text="50"
+                android:textColor="@color/colorfuzhi"
+                android:textSize="25sp"
+                android:layout_alignLeft="@+id/tv_fuzhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_baifenhao"
+                android:textSize="12sp"
+                android:text="%"
+                android:layout_toRightOf="@+id/tv_score"
+                android:textColor="@color/colorfuzhi"
+                android:layout_alignBottom="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:id="@+id/tv_desc"
+            android:text="综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:textSize="10sp"
+            android:layout_toRightOf="@+id/tv_baifenhao"
+            android:layout_alignTop="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
