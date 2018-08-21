@@ -3,6 +3,7 @@
     package="com.deeocare.deepcare">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -12,6 +13,10 @@
     <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +25,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ResultPreviewActivity">
+        <activity
+            android:name=".ui.ProblemDetailActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +42,7 @@
         <activity android:name=".ui.AddHuiYuanActivity" />
         <activity android:name=".ui.ShowHuiYuanActivity" />
         <activity android:name=".ui.HuiYuanSearchActivity" />
-        <!-- <activity android:name=".ui.ResultPreviewActivity"></activity> -->
+        <activity android:name=".ui.ResultPreviewActivity" />
         <activity android:name=".ui.ShareActivity" />
         <activity
             android:name="me.iwf.photopicker.PhotoPickerActivity"
@@ -57,9 +64,14 @@
         <activity android:name=".ui.CameraTestActivity" />
         <activity android:name=".ui.ImageMarkActivity" />
         <activity
-            android:name=".ui.CustomCamera"
+            android:name=".ui.CustomCameraActivity"
             android:label="@string/title_activity_custom_camera"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.AutoTakePicturesActivity" />
+        <activity android:name=".ui.GaiShanActivity" />
+        <activity android:name=".ui.ChartActivity" />
+         <activity android:name=".ui.LoginActivity"></activity>
+        <!--<activity android:name=".ui.ProblemDetailActivity"></activity>-->
     </application>
 
 </manifest>

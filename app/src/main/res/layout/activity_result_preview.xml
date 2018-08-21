@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
+    android:orientation="vertical"
     tools:context=".ui.ResultPreviewActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical">
 
 
@@ -55,66 +57,28 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="600dp">
+            android:layout_height="600dp"
+            android:orientation="vertical">
             <!--<include-->
-                <!--android:id="@+id/ll_item"-->
-                <!--layout="@layout/grid_item" />-->
+            <!--android:id="@+id/ll_item"-->
+            <!--layout="@layout/grid_item" />-->
             <GridView
                 android:id="@+id/gv_pingce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:focusable="true"
-                android:layout_width="match_parent"
-                android:numColumns="2"
-                android:layout_height="wrap_content">
-            </GridView>
-        </LinearLayout>
-
-
-
-
-        <RelativeLayout
-            android:visibility="gone"
-            android:id="@+id/rl_gaishan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#996699">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="如何改善"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:paddingRight="3dp"
-                android:src="@drawable/arrow_down_float" />
-
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_gaishan_conten"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#000">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="700dp"
-                android:text="综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明综合报告说明" />
-
+                android:numColumns="2"></GridView>
         </LinearLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_gaisan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#996699"
+        android:gravity="center"
+        android:text="如何改善"
+        android:visibility="visible"
+        android:textSize="30sp" />
 
 </LinearLayout>

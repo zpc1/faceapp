@@ -2,46 +2,30 @@ package com.deeocare.deepcare.ui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.deeocare.deepcare.Contast;
 import com.deeocare.deepcare.R;
 import com.deeocare.deepcare.adapter.RadarAdapter;
 import com.deeocare.deepcare.bean.PingCeSingle;
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.animation.EasingFunction;
 import com.github.mikephil.charting.charts.RadarChart;
 import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.MarkerView;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.RadarData;
 import com.github.mikephil.charting.data.RadarDataSet;
 import com.github.mikephil.charting.data.RadarEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
-import com.github.mikephil.charting.formatter.IValueFormatter;
-import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IRadarDataSet;
-import com.github.mikephil.charting.utils.MPPointF;
-import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -53,8 +37,9 @@ import java.util.Set;
 public class ResultPreviewActivity extends Activity implements View.OnClickListener {
     private RadarChart mchart;
     private Typeface tf;
-    private LinearLayout ll_gaishai_content;// ll ,
-    private RelativeLayout rl_gaishan;
+    private TextView tv_gaishan;
+//    private LinearLayout ll_gaishai_content;// ll ,
+//    private RelativeLayout rl_gaishan;
     private ImageView bt_camera, bt_share;
     private String[] mActivities = new String[]{"毛孔", "黑头", "纹理", "黑点",};
     private boolean is_ll_gaishan_show = false;
@@ -74,15 +59,17 @@ public class ResultPreviewActivity extends Activity implements View.OnClickListe
         mchart = (RadarChart) findViewById(R.id.radarchart_fuzhi);
 //        ll = (LinearLayout) findViewById(R.id.ll_item);
 //        ll.setOnClickListener(this);
-        rl_gaishan = findViewById(R.id.rl_gaishan);
-        rl_gaishan.setOnClickListener(this);
+//        rl_gaishan = findViewById(R.id.rl_gaishan);
+//        rl_gaishan.setOnClickListener(this);
+        tv_gaishan = findViewById(R.id.tv_gaisan);
+        tv_gaishan.setOnClickListener(this);
         bt_camera = (ImageView) findViewById(R.id.iv_camera);
         bt_camera.setOnClickListener(this);
         bt_share = (ImageView) findViewById(R.id.iv_share);
         bt_share.setOnClickListener(this);
-        ll_gaishai_content = (LinearLayout) findViewById(R.id.ll_gaishan_conten);
+//        ll_gaishai_content = (LinearLayout) findViewById(R.id.ll_gaishan_conten);
 //        ll_gaishai_content.setVisibility(View.GONE);
-        ll_gaishai_content.setOnClickListener(this);
+//        ll_gaishai_content.setOnClickListener(this);
         mGridView = findViewById(R.id.gv_pingce);
 
 //        init_chart();
@@ -200,30 +187,55 @@ public class ResultPreviewActivity extends Activity implements View.OnClickListe
 //        l.setYEntrySpace(5f);
 //        l.setTextColor(Color.WHITE);
 //    }
+    private static final String TAG = "ResultPreviewActivity";
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==0){
+            if (resultCode==RESULT_OK){
+                if (data!=null){
+                    ArrayList<CharSequence> picturePaths = data.getCharSequenceArrayListExtra(Contast.PICTURE_PATHS);
+                    String paths="连拍图片的路径如下：\n";
+                    for (int i = 0; i <picturePaths.size() ; i++) {
+                        paths+=picturePaths.get(i)+"\n";
+                    }
+                    Log.e(TAG,"result path "+paths.toString());
+//                    String  path = picturePaths.get(0).toString();
+//                    Bitmap bitmap = BitmapFactory.decodeFile(path);
+//                    Matrix matrix = new Matrix();
+//                    matrix.setRotate(90);//默认是横屏的饿，旋转90度
+//                    Bitmap bitmap1 = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(),matrix,true);
+//                    mIvShow.setImageBitmap(bitmap1);
+//                    mShowPaths.setText(paths);
+                }
+            }
+        }
+    }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rl_gaishan:
+            case R.id.tv_gaisan:
 //                ll_gaishai_content.setVisibility(View.VISIBLE);
-                showLayout(is_ll_gaishan_show, ll_gaishai_content);
-                Toast.makeText(this, "改善被点击了", Toast.LENGTH_SHORT).show();
+//                showLayout(is_ll_gaishan_show, ll_gaishai_content);
+
+//                Toast.makeText(this, "改善被点击了", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, GaiShanActivity.class));
                 break;
 //            case R.id.ll_item:
 //                Toast.makeText(this,"雷达图布局被点击了",Toast.LENGTH_SHORT).show();
 //                break;
             case R.id.iv_share:
-                startActivity(new Intent(this, ImageMarkActivity.class));
+                startActivity(new Intent(this, ShareActivity.class));
 //                Toast.makeText(this, "分享被点击了", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.iv_camera:
-                startActivity(new Intent(this,CameraTestActivity.class));
+//                startActivityForResult(new Intent(this,AutoTakePicturesActivity.class),0);
                 Toast.makeText(this, "相机被点击了", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ll_gaishan_conten:
-                Toast.makeText(this, "item布局被点击了", Toast.LENGTH_SHORT).show();
-
-                break;
+//            case R.id.ll_gaishan_conten:
+//                Toast.makeText(this, "item布局被点击了", Toast.LENGTH_SHORT).show();
+//                break;
         }
 
     }

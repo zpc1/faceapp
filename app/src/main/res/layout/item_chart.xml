@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_chart_class"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="改善皮肤"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/chart_dvide"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_chart_service_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="高级服务"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/chart_service_num_add"
+                android:gravity="center"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/chart_service_num"
+                android:gravity="center"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/chart_service_num_desc"
+                android:gravity="center"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_chart_service_price"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="270.000"
+            />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/chart_service_del"
+            android:src="@drawable/ic_menu_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

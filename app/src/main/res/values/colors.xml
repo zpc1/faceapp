@@ -17,4 +17,8 @@
     <color name="divider">#B6B6B6</color>
     <color name="color_c51">#f94c51</color>
     <color name="color_green">#43c117</color>
+    <color name="color_bt_bg">#f240ff</color>
+    <color name="color_sf_bg">#efebef</color>
+    <color name="red">#ea0f1e</color>
+    <color name="colorgrey">#CFCFCF</color>
 </resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ChartActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chart_recycler"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:padding="7dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <TextView
+            android:text="总价："
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/total_price"
+
+            android:text="0.00"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:textSize="30sp"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="确认支付"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

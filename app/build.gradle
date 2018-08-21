@@ -2,14 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '27.0.2'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.deeocare.deepcare"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -22,9 +21,7 @@ android {
 dependencies {
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+
     compile 'me.iwf.photopicker:PhotoPicker:0.9.12@aar'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
@@ -32,4 +29,6 @@ dependencies {
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.github.bumptech.glide:glide:4.1.1'
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.lzy.net:okgo:3.0.4'
 }
